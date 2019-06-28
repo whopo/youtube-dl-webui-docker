@@ -38,7 +38,7 @@ RUN : \
 	&& apt-get purge -y --auto-remove wget unzip dirmngr \
 	&& rm -fr /var/lib/apt/lists/*
 
-COPY docker-entrypoint.sh /usr/local/bin
+COPY docker-entrypoint.sh /usr/src/youtube_dl_webui
 COPY default_config.json /config.json
 ENTRYPOINT ["docker-entrypoint.sh"]
 
