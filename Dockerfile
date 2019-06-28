@@ -24,11 +24,10 @@ RUN set -x \
 	&& gosu nobody true
 
 # install ffmpeg
-ENV FFMPEG_URL 'https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-64bit-static.tar.xz'
 RUN : \
 	&& mkdir -p /tmp/ffmpeg \
 	&& cd /tmp/ffmpeg \
-	&& wget -O ffmpeg.tar.xz "$FFMPEG_URL" \
+	&& wget -O ffmpeg.tar.xz https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-64bit-static.tar.xz \
 	&& tar -xf ffmpeg.tar.xz -C . --strip-components 1 \
 	&& cp ffmpeg ffprobe qt-faststart /usr/bin \
 	&& cd .. \
