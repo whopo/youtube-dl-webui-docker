@@ -13,4 +13,4 @@ if [[ "$*" == python*-m*youtube_dl_webui* ]]; then
     exec gosu $puid:$pgid "$@" -c $conf --host $host --port $port
 fi
 
-exec "$@"
+exec "$@" -c $conf --host $host --port $port
