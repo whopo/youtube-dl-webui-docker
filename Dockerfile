@@ -20,20 +20,19 @@ RUN : \
 	&& cd /tmp/ffmpeg \
 	&& wget -O ffmpeg.tar.xz https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz \
 	&& tar -xf ffmpeg.tar.xz -C . --strip-components 1 \
-	&& cp ffmpeg ffmpeg-10bit ffprobe qt-faststart /usr/bin \
+	&& cp ffmpeg ffprobe qt-faststart /usr/bin \
 	&& cd .. \
 	&& rm -fr /tmp/ffmpeg
 
 # install youtube-dl-webui
-ENV YOUTUBE_DL_WEBUI_SOURCE /usr/src/youtube_dl_webui
-WORKDIR $YOUTUBE_DL_WEBUI_SOURCE
+WORKDIR /usr/src/youtube_dl_webui
 
 RUN : \
 	&& pip install --no-cache-dir youtube-dl flask \
 	&& wget -O youtube-dl-webui.zip https://github.com/d0u9/youtube-dl-webui/archive/dev.zip \
 	&& unzip youtube-dl-webui.zip \
 	&& cd youtube-dl-webui*/ \
-	&& cp -r ./* $YOUTUBE_DL_WEBUI_SOURCE/ \
+	&& cp -r ./* /usr/src/youtube_dl_webui/ \
 	&& ln -s $YOUTUBE_DL_WEBUI_SOURCE/example_config.json /etc/youtube-dl-webui.json \
 	&& cd .. && rm -rf youtube-dl-webui* \
 	&& apt-get purge -y --auto-remove wget unzip dirmngr \
