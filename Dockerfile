@@ -11,7 +11,7 @@ RUN set -x \
 		wget \
 		xz-utils \
 	' \
-	&& apt-get update && apt-get install -y --no-install-recommends $buildDeps \
+	&& apt-get update && apt-get install -y --no-install-recommends $buildDeps
 
 
 # install ffmpeg
