@@ -1,4 +1,4 @@
-FROM d0u9/youtube-dl-webui
+FROM poiamber/youtube-dl-webui:basic
 
 RUN rm -rf /etc/apt/sources.list
 COPY sources.list /etc/apt/sources.list
