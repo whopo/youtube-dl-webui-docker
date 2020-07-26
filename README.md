@@ -9,7 +9,7 @@ Visit Original [GitHub](https://github.com/d0u9/youtube-dl-webui) for more detai
 From DockerHUB
 
         docker pull poiamber/youtube-dl-webui
-Updated : 2020 Jul 04
+Updated : 2020 Jul 25
 
 ## Usage
 
